@@ -2,6 +2,26 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import xarray as xr
-ds = xr.open_dataset()
 
 # Will start to make a variable with the path to our data, once we've leanred more about working with gridded data.
+pathname = '/Users/jamespatla/ev228_data/'
+file = 'LeesFerryNatlFlow.mon (1).nc'
+
+# Write code that sets a variable to a bound method, which helps read our data.
+da = xr.open_dataarray(pathname + file)
+# ds_var = ds['value']
+# print(ds_var)
+print(da)
+
+# The following code is our attempt at making a figure of our data using 'index'.
+# 
+# This will probably be subjected to change in the future.
+# ds_var_index = ds_var.isel(value=0)
+# ds_var_index.plot()
+# plt.show()
+
+da.plot()
+plt.show()
+# da_timemn = da.mean('time')
+# da_timemn.plot()
+# plt.show()
