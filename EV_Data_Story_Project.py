@@ -22,7 +22,12 @@ print(da)
 
 # da.plot()
 # plt.show()
-## da_timemn = da.mean('time')
+da_timemn = da.groupby('time.year').mean()
+da_timemn.plot()
+plt.xlabel('Years')
+plt.ylabel('Average Streamflow (ft per month)')
+plt.title('Streamflow in Colorado Basin')
+plt.show()
 # np_data = da.data
 # da_timemn.plot()
 # plt.show()
