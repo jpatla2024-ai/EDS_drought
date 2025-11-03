@@ -40,7 +40,7 @@ def az_drought(pathname, file2):
     # Now we can begin to craft a figure to represent out data, and expand from there.
     # We tried to lower the variability of this data by zooming in to closer intervals in the data.
     plt.figure(2)
-    sns.regplot(x=dates.values, y=AZ_drought.values, line_kws={'color':'red'}, scatter=False)
+    sns.regplot(x=dates, y=AZ_drought.values, line_kws={'color':'red'}, scatter=False)
     print(AZ_drought.values)
     # sns.regplot(x='column_name_for_x', y='column_name_for_y', data=df)
     plt.plot(gooddates, AZ_drought, color='orange')
