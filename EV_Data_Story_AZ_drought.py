@@ -1,5 +1,7 @@
 # Importing the necessary packages before creating a figure.
 # We probably won't need to use numpy for this code, but it's there in case we do.
+import sys
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -19,6 +21,9 @@ def az_drought(pathname, file2):
     # Extracting D2 (Severe Droughts) and Map Dates, and assigning them to variables.
     AZ_drought = df['D2']
     dates = df['MapDate']
+    gooddates = pd.to_datetime(dates, format='%Y%m%d')
+    print(gooddates)
+    # sys.exit('STOP')
     # The line of code containing the 'datesmn' variable was our attempt at trying to remove decimals from the dates.
     # It didn't work though.
     # datesmn = dates.groupby('time.year').mean()
@@ -33,8 +38,8 @@ def az_drought(pathname, file2):
     # Now we can begin to craft a figure to represent out data, and expand from there.
     # We tried to lower the variability of this data by zooming in to closer intervals in the data.
     plt.figure(2)
-    plt.plot(dates, AZ_drought, color='orange')
-    plt.xlim(dates[563], dates[0])
+    plt.plot(gooddates, AZ_drought, color='orange')
+    plt.xlim(gooddates[563], gooddates[0])
     plt.xlabel('Years')
     plt.ylabel('AZ in Severe Drought (%)')
     plt.title('Percentage of Severe Drought in AZ')
