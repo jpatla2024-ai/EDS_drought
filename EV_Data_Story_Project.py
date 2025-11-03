@@ -1,8 +1,11 @@
 # Importing the necessary data packages to analyze our data.
+import sys
+
 import matplotlib.pyplot as plt
 import numpy as np
 import xarray as xr
 import pandas as pd
+import seaborn as sns
 
 # Will start to make a variable with the path to our data, once we've leanred more about working with gridded data.
 
@@ -23,12 +26,17 @@ def lees_ferry(pathname, file):
     # Making a figure that averages the streamflow from each month of each year in the data.
     # This helps lower the variability in the figure, making it easier to read.
     da_timemn = da.groupby('time.year').mean()
-    # print('da_timemn', da_timemn)
-    da_timemn.plot()
+    print('da_timemn', da_timemn)
+    # sys.exit('STOP')
+
+    print(da_timemn.data)
     plt.figure(1)
+    sns.regplot(x=da_timemn['year'].data, y=da_timemn.data, line_kws={'color':'red'}, scatter=False)
+    plt.plot(da_timemn['year'].data, da_timemn.data, label='Lees Ferry Stream Flow', color='blue')
     plt.xlabel('Years')
     plt.ylabel('Average Streamflow (ft per month)')
     plt.title('Streamflow in Lees Ferry')
+    plt.xlim(1905, 2017)
     # plt.show()
     
 

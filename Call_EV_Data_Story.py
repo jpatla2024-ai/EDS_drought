@@ -6,8 +6,8 @@ import pandas as pd
 import xarray as xr
 
 # Assigning variables to important paths and/or data files.
-pathname = '/Users/jamespatla/ev228_data/'
-file = 'LeesFerryNatlFlow.mon (1).nc'
+pathname = '/Users/averyrubins/data/ev228_data/'
+file = 'LeesFerryNatlFlow.mon.nc'
 file2 = 'USDM-Arizona.csv'
 # func1 = ev.lees_ferry(pathname, file)
 # func2 = az.az_drought(pathname, file2)
