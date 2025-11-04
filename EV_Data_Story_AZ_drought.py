@@ -47,7 +47,7 @@ def az_drought(pathname, file2):
     plt.xlim(gooddates[563], gooddates[0])
     plt.xlabel('Years')
     plt.ylabel('AZ in Severe Drought (%)')
-    plt.title('Percentage of Severe Drought in AZ')
+    plt.title('Percentage of Severe Drought in AZ from 2000-2025')
     # plt.show()
 
     ## print(dates)

@@ -35,7 +35,7 @@ def lees_ferry(pathname, file):
     plt.plot(da_timemn['year'].data, da_timemn.data, label='Lees Ferry Stream Flow', color='blue')
     plt.xlabel('Years')
     plt.ylabel('Average Streamflow (ft per month)')
-    plt.title('Streamflow in Lees Ferry')
+    plt.title('Streamflow in Lees Ferry from 1905-2017')
     plt.xlim(1905, 2017)
     # plt.show()
     
